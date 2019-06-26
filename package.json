@@ -1,0 +1,41 @@
+{
+	"name": "welding-utils",
+	"version": "1.0.0",
+	"description": "Useful utilities related to welding",
+	"main": "dist",
+	"author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
+	"bugs": {
+		"url": "https://github.com/xxczaki/welding-utils/issues"
+	},
+	"scripts": {
+		"build": "del dist && tsc",
+		"test": "xo && npm run build",
+		"prepublishOnly": "npm run build"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"license": "MIT",
+	"repository": "xxczaki/welding-utils",
+	"homepage": "https://github.com/xxczaki/welding-utils",
+	"devDependencies": {
+		"@akepinski/tsconfig": "0.0.2",
+		"@typescript-eslint/eslint-plugin": "^1.11.0",
+		"@typescript-eslint/parser": "^1.11.0",
+		"del-cli": "^2.0.0",
+		"eslint-config-xo-typescript": "^0.15.0",
+		"typescript": "^3.5.2",
+		"xo": "*"
+	},
+	"types": "dist",
+	"sideEffects": false,
+	"xo": {
+		"extends": "xo-typescript",
+		"rules": {
+			"no-mixed-operators": "off"
+		},
+		"extensions": [
+			"ts"
+		]
+	}
+}
