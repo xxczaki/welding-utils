@@ -17,7 +17,7 @@ $ npm install welding-utils
 ## Usage
 
 ```js
-const {heatInput} = require('./dist');
+const {heatInput} = require('welding-utils');
 
 const options = {
     voltage: 200,
