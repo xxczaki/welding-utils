@@ -1,15 +1,25 @@
 {
 	"name": "welding-utils",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Useful utilities related to welding",
-	"main": "dist",
+	"main": "dist/index.js",
+	"module": "dist/index.esm.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist/index.js",
+		"dist/index.esm.js",
+		"dist/index.d.ts"
+	],
 	"author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
 	"bugs": {
 		"url": "https://github.com/xxczaki/welding-utils/issues"
 	},
 	"scripts": {
-		"build": "del dist && tsc",
-		"test": "xo && npm run build",
+		"prebuild": "del-cli dist",
+		"esm": "tsc --module esnext && cpy dist/index.js dist --rename index.esm.js",
+		"cjs": "tsc --module commonjs",
+		"build": "npm run esm && npm run cjs",
+		"test": "xo && npm run build && ava",
 		"prepublishOnly": "npm run build"
 	},
 	"engines": {
@@ -22,12 +32,12 @@
 		"@akepinski/tsconfig": "0.0.2",
 		"@typescript-eslint/eslint-plugin": "^1.11.0",
 		"@typescript-eslint/parser": "^1.11.0",
+		"cpy-cli": "^2.0.0",
 		"del-cli": "^2.0.0",
 		"eslint-config-xo-typescript": "^0.15.0",
 		"typescript": "^3.5.2",
 		"xo": "*"
 	},
-	"types": "dist",
 	"sideEffects": false,
 	"xo": {
 		"extends": "xo-typescript",
