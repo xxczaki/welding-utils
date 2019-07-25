@@ -1,4 +1,5 @@
 import test from 'ava';
+// eslint-disable-next-line import/no-unresolved
 import {ceq, cet, ceAws, pcm, pren, heatInput} from '../dist';
 
 const elements = {
