@@ -1,64 +1,66 @@
 {
-	"name": "welding-utils",
-	"version": "1.0.1",
-	"description": "Useful utilities related to welding",
-	"main": "dist/index.js",
-	"module": "dist/index.esm.js",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist/index.js",
-		"dist/index.esm.js",
-		"dist/index.d.ts"
-	],
-	"author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
-	"bugs": {
-		"url": "https://github.com/xxczaki/welding-utils/issues"
-	},
-	"scripts": {
-		"prebuild": "del-cli dist",
-		"esm": "tsc --module esnext && cpy dist/index.js dist --rename index.esm.js",
-		"cjs": "tsc --module commonjs",
-		"build": "npm run esm && npm run cjs",
-		"test": "xo && npm run build && ava",
-		"prepublishOnly": "npm run build"
-	},
-	"engines": {
-		"node": ">=8"
-	},
-	"license": "MIT",
-	"repository": "xxczaki/welding-utils",
-	"homepage": "https://github.com/xxczaki/welding-utils",
-	"devDependencies": {
-		"@akepinski/tsconfig": "0.0.2",
-		"@typescript-eslint/eslint-plugin": "^1.11.0",
-		"@typescript-eslint/parser": "^1.11.0",
-		"ava": "*",
-		"cpy-cli": "^2.0.0",
-		"del-cli": "^2.0.0",
-		"eslint-config-xo-typescript": "^0.15.0",
-		"ts-node": "^8.3.0",
-		"typescript": "^3.5.2",
-		"xo": "*"
-	},
-	"sideEffects": false,
-	"ava": {
-		"babel": false,
-		"compileEnhancements": false,
-		"extensions": [
-			"ts"
-		],
-		"require": [
-			"ts-node/register"
-		]
-	},
-	"xo": {
-		"extends": "xo-typescript",
-		"rules": {
-			"ava/no-ignored-test-files": "off",
-			"no-mixed-operators": "off"
-		},
-		"extensions": [
-			"ts"
-		]
-	}
+    "name": "welding-utils",
+    "version": "1.1.0",
+    "description": "Useful utilities related to welding",
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/index.js",
+        "dist/index.esm.js",
+        "dist/index.d.ts"
+    ],
+    "author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
+    "bugs": {
+        "url": "https://github.com/xxczaki/welding-utils/issues"
+    },
+    "scripts": {
+        "prebuild": "del-cli dist",
+        "esm": "tsc --module esnext && cpy dist/index.js dist --rename index.esm.js",
+        "cjs": "tsc --module commonjs",
+        "build": "npm run esm && npm run cjs",
+        "test": "xo && npm run build && ava",
+        "prepublishOnly": "npm run build"
+    },
+    "engines": {
+        "node": ">=8"
+    },
+    "license": "MIT",
+    "repository": "xxczaki/welding-utils",
+    "homepage": "https://github.com/xxczaki/welding-utils",
+    "devDependencies": {
+        "@akepinski/tsconfig": "0.0.2",
+        "@typescript-eslint/eslint-plugin": "^1.11.0",
+        "@typescript-eslint/parser": "^1.11.0",
+        "ava": "*",
+        "cpy-cli": "^3.0.0",
+        "del-cli": "^3.0.0",
+        "eslint-config-xo-typescript": "^0.15.0",
+        "ts-node": "^8.5.4",
+        "type-fest": "^0.8.1",
+        "typescript": "^3.7.4",
+        "xo": "*"
+    },
+    "sideEffects": false,
+    "ava": {
+        "babel": false,
+        "compileEnhancements": false,
+        "extensions": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register"
+        ]
+    },
+    "xo": {
+        "extends": "xo-typescript",
+        "rules": {
+            "ava/no-ignored-test-files": "off",
+            "no-mixed-operators": "off"
+        },
+        "extensions": [
+            "ts"
+        ]
+    },
+    "dependencies": {}
 }
