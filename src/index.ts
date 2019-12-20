@@ -1,10 +1,12 @@
 'use strict';
 
+import {Except} from 'type-fest';
+
 interface Options {
 	voltage: number;
 	amperage: number;
 	efficiencyFactor: number;
-	lenght: number;
+	length: number;
 	time: number;
 }
 
@@ -21,10 +23,10 @@ interface Elements {
 	nitrogen: number;
 }
 
-type ceq = Omit<Elements, 'silicon' | 'boron' | 'nitrogen'>;
-type cet = Omit<Elements, 'silicon' | 'boron' | 'nitrogen'>;
-type ceAws = Omit<Elements, 'boron' | 'nitrogen'>;
-type pcm = Omit<Elements, 'nitrogen'>;
+type ceq = Except<Elements, 'silicon' | 'boron' | 'nitrogen'>;
+type cet = Except<Elements, 'silicon' | 'boron' | 'nitrogen'>;
+type ceAws = Except<Elements, 'boron' | 'nitrogen'>;
+type pcm = Except<Elements, 'nitrogen'>;
 type pren = Pick<Elements, 'chromium' | 'molybdenum' | 'nitrogen'>;
 
 /**
@@ -118,11 +120,11 @@ const heatInput = (options: Options): number => {
 		voltage,
 		amperage,
 		efficiencyFactor,
-		lenght,
+		length,
 		time
 	} = options;
 
-	return ((voltage * amperage * efficiencyFactor) / (lenght / time * 1000));
+	return ((voltage * amperage * efficiencyFactor) / (length / time * 1000));
 };
 
 export {

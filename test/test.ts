@@ -39,7 +39,7 @@ test('heatInput', t => {
 		voltage: 200,
 		amperage: 32,
 		efficiencyFactor: 0.8,
-		lenght: 20,
+		length: 20,
 		time: 11
 	};
 
