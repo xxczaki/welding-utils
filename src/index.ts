@@ -11,7 +11,7 @@ interface Options {
 }
 
 interface Elements {
-	coal: number;
+	carbon: number;
 	manganese: number;
 	chromium: number;
 	molybdenum: number;
@@ -34,7 +34,7 @@ type pren = Pick<Elements, 'chromium' | 'molybdenum' | 'nitrogen'>;
 	*/
 const ceq = (elements: ceq): number => {
 	const {
-		coal,
+		carbon,
 		manganese,
 		chromium,
 		molybdenum,
@@ -43,7 +43,7 @@ const ceq = (elements: ceq): number => {
 		copper
 	} = elements;
 
-	return (coal + (manganese / 6) + (chromium + molybdenum + vanadium) / 5 + (nickel + copper) / 15);
+	return (carbon + (manganese / 6) + (chromium + molybdenum + vanadium) / 5 + (nickel + copper) / 15);
 };
 
 /**
@@ -51,7 +51,7 @@ const ceq = (elements: ceq): number => {
 	*/
 const cet = (elements: cet): number => {
 	const {
-		coal,
+		carbon,
 		manganese,
 		chromium,
 		molybdenum,
@@ -59,7 +59,7 @@ const cet = (elements: cet): number => {
 		copper
 	} = elements;
 
-	return (coal + (manganese + molybdenum) / 10 + (chromium + copper) / 20 + (nickel / 40));
+	return (carbon + (manganese + molybdenum) / 10 + (chromium + copper) / 20 + (nickel / 40));
 };
 
 /**
@@ -67,7 +67,7 @@ const cet = (elements: cet): number => {
 	*/
 const ceAws = (elements: ceAws): number => {
 	const {
-		coal,
+		carbon,
 		manganese,
 		chromium,
 		molybdenum,
@@ -77,7 +77,7 @@ const ceAws = (elements: ceAws): number => {
 		silicon
 	} = elements;
 
-	return (coal + (manganese / 6) + (chromium + molybdenum + vanadium) / 5 + (nickel + copper) / 15 + (silicon / 6));
+	return (carbon + (manganese / 6) + (chromium + molybdenum + vanadium) / 5 + (nickel + copper) / 15 + (silicon / 6));
 };
 
 /**
@@ -85,7 +85,7 @@ const ceAws = (elements: ceAws): number => {
 	*/
 const pcm = (elements: pcm): number => {
 	const {
-		coal,
+		carbon,
 		manganese,
 		chromium,
 		molybdenum,
@@ -96,7 +96,7 @@ const pcm = (elements: pcm): number => {
 		boron
 	} = elements;
 
-	return (coal + (silicon / 30) + (manganese + copper + chromium) / 20 + (nickel / 60) + (molybdenum / 15) + (vanadium / 10) + 5 * boron);
+	return (carbon + (silicon / 30) + (manganese + copper + chromium) / 20 + (nickel / 60) + (molybdenum / 15) + (vanadium / 10) + 5 * boron);
 };
 
 /**

@@ -1,9 +1,8 @@
 import test from 'ava';
-// eslint-disable-next-line import/no-unresolved
-import {ceq, cet, ceAws, pcm, pren, heatInput} from '../dist';
+import {ceq, cet, ceAws, pcm, pren, heatInput} from './dist';
 
 const elements = {
-	coal: 1,
+	carbon: 1,
 	manganese: 1.3,
 	chromium: 0.4,
 	molybdenum: 2,
