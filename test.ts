@@ -1,5 +1,5 @@
 import test from 'ava';
-import {ceq, cet, ceAws, pcm, pren, heatInput} from './dist';
+import {ceq, cet, ceAws, pcm, pren, heatInput, preheat} from './dist';
 
 const elements = {
 	carbon: 1,
@@ -44,4 +44,15 @@ test('heatInput', t => {
 	};
 
 	t.is(heatInput(options), 2.8160000000000003);
+});
+
+test('preheat', t => {
+	const options = {
+		cet: 0.4,
+		thickness: 10,
+		heatInput: 4,
+		hydrogenLevel: 5
+	};
+
+	t.is(preheat(options), 60.609678452112405);
 });

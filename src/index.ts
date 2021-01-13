@@ -23,6 +23,13 @@ interface Elements {
 	nitrogen: number;
 }
 
+interface PreheatOptions {
+	cet: number;
+	thickness: number;
+	heatInput: number;
+	hydrogenLevel: number;
+}
+
 type ceq = Except<Elements, 'silicon' | 'boron' | 'nitrogen'>;
 type cet = Except<Elements, 'silicon' | 'boron' | 'nitrogen'>;
 type ceAws = Except<Elements, 'boron' | 'nitrogen'>;
@@ -127,11 +134,26 @@ const heatInput = (options: Options): number => {
 	return ((voltage * amperage * efficiencyFactor) / (length / time * 1000));
 };
 
+/**
+    * @returns {number} Preheat
+	*/
+const preheat = (options: PreheatOptions): number => {
+	const {
+		cet,
+		thickness,
+		heatInput,
+		hydrogenLevel
+	} = options;
+
+	return (697 * cet) + (160 * Math.tanh(thickness / 35)) + (62 * (hydrogenLevel * 0.35)) + ((53 * cet) - 32) * heatInput - 328;
+};
+
 export {
 	ceq,
 	cet,
 	ceAws,
 	pcm,
 	pren,
-	heatInput
+	heatInput,
+	preheat
 };

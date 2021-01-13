@@ -48,7 +48,24 @@ interface Options {
 }
 ```
 
-Returns equivalent carbon content (CET)
+Returns heat input
+
+### preheat(options)
+
+**options**
+
+Type: `Object`
+
+```ts
+interface PreheatOptions {
+	cet: number;
+	thickness: number;
+	heatInput: number;
+	hydrogenLevel: number;
+}
+```
+
+Returns preheat
 
 ### ceq(elements)
 
@@ -68,7 +85,7 @@ interface Elements {
 }
 ```
 
-Returns equivalent carbon content (CET)
+Returns equivalent carbon content (CEQ)
 
 ### cet(elements)
 
